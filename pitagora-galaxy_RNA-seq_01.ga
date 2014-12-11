@@ -1,0 +1,557 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "RNA-seq 01", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 193.5, 
+                "top": 455
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "id": 1, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 195.5, 
+                "top": 586
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "id": 2, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 195.5, 
+                "top": 712
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "id": 3, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 197.5, 
+                "top": 851
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "4": {
+            "annotation": "", 
+            "id": 4, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 195.5, 
+                "top": 977
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "5": {
+            "annotation": "", 
+            "id": 5, 
+            "input_connections": {
+                "input_file": {
+                    "id": 1, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "FastQC:Read QC", 
+            "outputs": [
+                {
+                    "name": "html_file", 
+                    "type": "html"
+                }
+            ], 
+            "position": {
+                "left": 514.5, 
+                "top": 200
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.52", 
+            "tool_state": "{\"__page__\": 0, \"contaminants\": \"null\", \"__rerun_remap_job_id__\": null, \"out_prefix\": \"\\\"FastQC\\\"\", \"input_file\": \"null\"}", 
+            "tool_version": "0.52", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "6": {
+            "annotation": "", 
+            "id": 6, 
+            "input_connections": {
+                "singlePaired|input1": {
+                    "id": 1, 
+                    "output_name": "output"
+                }, 
+                "singlePaired|input2": {
+                    "id": 2, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Tophat2", 
+            "outputs": [
+                {
+                    "name": "align_summary", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "fusions", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "insertions", 
+                    "type": "bed"
+                }, 
+                {
+                    "name": "deletions", 
+                    "type": "bed"
+                }, 
+                {
+                    "name": "junctions", 
+                    "type": "bed"
+                }, 
+                {
+                    "name": "accepted_hits", 
+                    "type": "bam"
+                }
+            ], 
+            "position": {
+                "left": 625.5, 
+                "top": 562
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/tophat2/tophat2/0.6", 
+            "tool_state": "{\"__page__\": 0, \"singlePaired\": \"{\\\"input2\\\": null, \\\"input1\\\": null, \\\"report_discordant_pairs\\\": \\\"Yes\\\", \\\"sPaired\\\": \\\"paired\\\", \\\"__current_case__\\\": 1, \\\"mate_inner_distance\\\": \\\"300\\\", \\\"mate_std_dev\\\": \\\"20\\\"}\", \"__rerun_remap_job_id__\": null, \"readGroup\": \"{\\\"__current_case__\\\": 1, \\\"specReadGroup\\\": \\\"no\\\"}\", \"params\": \"{\\\"settingsType\\\": \\\"preSet\\\", \\\"__current_case__\\\": 0}\", \"refGenomeSource\": \"{\\\"genomeSource\\\": \\\"indexed\\\", \\\"index\\\": \\\"hg19\\\", \\\"__current_case__\\\": 0}\"}", 
+            "tool_version": "0.6", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "7": {
+            "annotation": "", 
+            "id": 7, 
+            "input_connections": {
+                "input_file": {
+                    "id": 2, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "FastQC:Read QC", 
+            "outputs": [
+                {
+                    "name": "html_file", 
+                    "type": "html"
+                }
+            ], 
+            "position": {
+                "left": 850.5, 
+                "top": 201
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.52", 
+            "tool_state": "{\"__page__\": 0, \"contaminants\": \"null\", \"__rerun_remap_job_id__\": null, \"out_prefix\": \"\\\"FastQC\\\"\", \"input_file\": \"null\"}", 
+            "tool_version": "0.52", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "8": {
+            "annotation": "", 
+            "id": 8, 
+            "input_connections": {
+                "input_file": {
+                    "id": 3, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "FastQC:Read QC", 
+            "outputs": [
+                {
+                    "name": "html_file", 
+                    "type": "html"
+                }
+            ], 
+            "position": {
+                "left": 1187.5, 
+                "top": 198
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.52", 
+            "tool_state": "{\"__page__\": 0, \"contaminants\": \"null\", \"__rerun_remap_job_id__\": null, \"out_prefix\": \"\\\"FastQC\\\"\", \"input_file\": \"null\"}", 
+            "tool_version": "0.52", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "9": {
+            "annotation": "", 
+            "id": 9, 
+            "input_connections": {
+                "singlePaired|input1": {
+                    "id": 3, 
+                    "output_name": "output"
+                }, 
+                "singlePaired|input2": {
+                    "id": 4, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Tophat2", 
+            "outputs": [
+                {
+                    "name": "align_summary", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "fusions", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "insertions", 
+                    "type": "bed"
+                }, 
+                {
+                    "name": "deletions", 
+                    "type": "bed"
+                }, 
+                {
+                    "name": "junctions", 
+                    "type": "bed"
+                }, 
+                {
+                    "name": "accepted_hits", 
+                    "type": "bam"
+                }
+            ], 
+            "position": {
+                "left": 624.5, 
+                "top": 965
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/tophat2/tophat2/0.6", 
+            "tool_state": "{\"__page__\": 0, \"singlePaired\": \"{\\\"input2\\\": null, \\\"input1\\\": null, \\\"report_discordant_pairs\\\": \\\"Yes\\\", \\\"sPaired\\\": \\\"paired\\\", \\\"__current_case__\\\": 1, \\\"mate_inner_distance\\\": \\\"300\\\", \\\"mate_std_dev\\\": \\\"20\\\"}\", \"__rerun_remap_job_id__\": null, \"readGroup\": \"{\\\"__current_case__\\\": 1, \\\"specReadGroup\\\": \\\"no\\\"}\", \"params\": \"{\\\"settingsType\\\": \\\"preSet\\\", \\\"__current_case__\\\": 0}\", \"refGenomeSource\": \"{\\\"genomeSource\\\": \\\"indexed\\\", \\\"index\\\": \\\"hg19\\\", \\\"__current_case__\\\": 0}\"}", 
+            "tool_version": "0.6", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "10": {
+            "annotation": "", 
+            "id": 10, 
+            "input_connections": {
+                "input_file": {
+                    "id": 4, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "FastQC:Read QC", 
+            "outputs": [
+                {
+                    "name": "html_file", 
+                    "type": "html"
+                }
+            ], 
+            "position": {
+                "left": 1511.5, 
+                "top": 200
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.52", 
+            "tool_state": "{\"__page__\": 0, \"contaminants\": \"null\", \"__rerun_remap_job_id__\": null, \"out_prefix\": \"\\\"FastQC\\\"\", \"input_file\": \"null\"}", 
+            "tool_version": "0.52", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "11": {
+            "annotation": "", 
+            "id": 11, 
+            "input_connections": {
+                "input": {
+                    "id": 6, 
+                    "output_name": "accepted_hits"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Cufflinks", 
+            "outputs": [
+                {
+                    "name": "genes_expression", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "transcripts_expression", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "assembled_isoforms", 
+                    "type": "gtf"
+                }, 
+                {
+                    "name": "total_map_mass", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 1068.5, 
+                "top": 553
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/cufflinks/cufflinks/0.0.7", 
+            "tool_state": "{\"min_isoform_fraction\": \"\\\"0.1\\\"\", \"multiread_correct\": \"\\\"No\\\"\", \"__page__\": 0, \"__rerun_remap_job_id__\": null, \"pre_mrna_fraction\": \"\\\"0.15\\\"\", \"bias_correction\": \"{\\\"do_bias_correction\\\": \\\"No\\\", \\\"__current_case__\\\": 1}\", \"effective_length_correction\": \"\\\"\\\"\", \"max_intron_len\": \"\\\"300000\\\"\", \"reference_annotation\": \"{\\\"use_ref\\\": \\\"No\\\", \\\"__current_case__\\\": 0}\", \"global_model\": \"null\", \"do_normalization\": \"\\\"No\\\"\", \"input\": \"null\"}", 
+            "tool_version": "0.0.7", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "12": {
+            "annotation": "", 
+            "id": 12, 
+            "input_connections": {
+                "input": {
+                    "id": 9, 
+                    "output_name": "accepted_hits"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Cufflinks", 
+            "outputs": [
+                {
+                    "name": "genes_expression", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "transcripts_expression", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "assembled_isoforms", 
+                    "type": "gtf"
+                }, 
+                {
+                    "name": "total_map_mass", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 1083.5, 
+                "top": 951
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/cufflinks/cufflinks/0.0.7", 
+            "tool_state": "{\"min_isoform_fraction\": \"\\\"0.1\\\"\", \"multiread_correct\": \"\\\"No\\\"\", \"__page__\": 0, \"__rerun_remap_job_id__\": null, \"pre_mrna_fraction\": \"\\\"0.15\\\"\", \"bias_correction\": \"{\\\"do_bias_correction\\\": \\\"No\\\", \\\"__current_case__\\\": 1}\", \"effective_length_correction\": \"\\\"\\\"\", \"max_intron_len\": \"\\\"300000\\\"\", \"reference_annotation\": \"{\\\"use_ref\\\": \\\"No\\\", \\\"__current_case__\\\": 0}\", \"global_model\": \"null\", \"do_normalization\": \"\\\"No\\\"\", \"input\": \"null\"}", 
+            "tool_version": "0.0.7", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "13": {
+            "annotation": "", 
+            "id": 13, 
+            "input_connections": {
+                "annotation|reference_annotation": {
+                    "id": 0, 
+                    "output_name": "output"
+                }, 
+                "first_input": {
+                    "id": 11, 
+                    "output_name": "assembled_isoforms"
+                }, 
+                "input_files_0|additional_input": {
+                    "id": 12, 
+                    "output_name": "assembled_isoforms"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Cuffmerge", 
+            "outputs": [
+                {
+                    "name": "merged_transcripts", 
+                    "type": "gtf"
+                }
+            ], 
+            "position": {
+                "left": 1503.5, 
+                "top": 763
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/cuffmerge/cuffmerge/0.0.6", 
+            "tool_state": "{\"seq_data\": \"{\\\"use_seq_data\\\": \\\"No\\\", \\\"__current_case__\\\": 0}\", \"__page__\": 0, \"__rerun_remap_job_id__\": null, \"first_input\": \"null\", \"annotation\": \"{\\\"reference_annotation\\\": null, \\\"use_ref_annotation\\\": \\\"Yes\\\", \\\"__current_case__\\\": 0}\", \"input_files\": \"[{\\\"__index__\\\": 0, \\\"additional_input\\\": null}]\"}", 
+            "tool_version": "0.0.6", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "14": {
+            "annotation": "", 
+            "id": 14, 
+            "input_connections": {
+                "conditions_0|samples_0|sample": {
+                    "id": 6, 
+                    "output_name": "accepted_hits"
+                }, 
+                "conditions_1|samples_0|sample": {
+                    "id": 9, 
+                    "output_name": "accepted_hits"
+                }, 
+                "gtf_input": {
+                    "id": 13, 
+                    "output_name": "merged_transcripts"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Cuffdiff", 
+            "outputs": [
+                {
+                    "name": "isoforms_read_group", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "genes_read_group", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "cds_read_group", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "tss_groups_read_group", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "splicing_diff", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "promoters_diff", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "cds_diff", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "cds_exp_fpkm_tracking", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "cds_fpkm_tracking", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "tss_groups_exp", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "tss_groups_fpkm_tracking", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "genes_exp", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "genes_fpkm_tracking", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "isoforms_exp", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "isoforms_fpkm_tracking", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 1841.5, 
+                "top": 516
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/cuffdiff/cuffdiff/0.0.7", 
+            "tool_state": "{\"__page__\": 0, \"gtf_input\": \"null\", \"library_norm_method\": \"\\\"geometric\\\"\", \"__rerun_remap_job_id__\": null, \"include_read_group_files\": \"\\\"No\\\"\", \"multiread_correct\": \"\\\"No\\\"\", \"bias_correction\": \"{\\\"do_bias_correction\\\": \\\"No\\\", \\\"__current_case__\\\": 1}\", \"fdr\": \"\\\"0.05\\\"\", \"dispersion_method\": \"\\\"pooled\\\"\", \"min_alignment_count\": \"\\\"10\\\"\", \"conditions\": \"[{\\\"__index__\\\": 0, \\\"name\\\": \\\"None\\\", \\\"samples\\\": [{\\\"sample\\\": null, \\\"__index__\\\": 0}]}, {\\\"__index__\\\": 1, \\\"name\\\": \\\"None\\\", \\\"samples\\\": [{\\\"sample\\\": null, \\\"__index__\\\": 0}]}]\", \"additional\": \"{\\\"sAdditional\\\": \\\"No\\\", \\\"__current_case__\\\": 0}\"}", 
+            "tool_version": "0.0.7", 
+            "type": "tool", 
+            "user_outputs": []
+        }
+    }
+}
