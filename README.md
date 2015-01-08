@@ -6,7 +6,7 @@ analysis workflows that work on the [galaxy](http://usegalaxy.org/) platform.
 
 ## Contribution
 
-1. Clone this repo.
-2. Add your json file of galaxy workflow.
+1. Fork this repository
+2. Create your institute directory and add your galaxy workflow json file
 3. Commit and pull request
 
