@@ -1,0 +1,101 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "Trinity contig to BLASTP", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 10, 
+                "top": 10
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "id": 1, 
+            "input_connections": {
+                "transcripts": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "transcriptsToOrfs", 
+            "outputs": [
+                {
+                    "name": "trinity_pep_pfam", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "trinity_pep_seqs", 
+                    "type": "fasta"
+                }, 
+                {
+                    "name": "trinity_pep_coords", 
+                    "type": "bed"
+                }
+            ], 
+            "position": {
+                "left": 230, 
+                "top": 10
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "transcriptsToOrfs", 
+            "tool_state": "{\"__page__\": 0, \"strand_specificity\": \"\\\"DS\\\"\", \"__rerun_remap_job_id__\": null, \"pfam_db\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"Pfam\\\"}\", \"min_prot_length\": \"\\\"100\\\"\", \"transcripts\": \"null\", \"chromInfo\": \"\\\"/lustre2/home/w3galaxy/galaxy-dist1/tool-data/shared/ucsc/chrom/?.len\\\"\", \"CPU\": \"\\\"18\\\"\"}", 
+            "tool_version": null, 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "id": 2, 
+            "input_connections": {
+                "i": {
+                    "id": 1, 
+                    "output_name": "trinity_pep_seqs"
+                }
+            }, 
+            "inputs": [], 
+            "name": "BLASTP", 
+            "outputs": [
+                {
+                    "name": "output1", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "output2", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 450, 
+                "top": 10
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "blastp_1", 
+            "tool_state": "{\"__page__\": 0, \"e\": \"\\\"-20\\\"\", \"d\": \"\\\"uniprot_swissprot_vertebrates.fasta\\\"\", \"i\": \"null\", \"__rerun_remap_job_id__\": null, \"chromInfo\": \"\\\"/lustre2/home/w3galaxy/galaxy-dist1/tool-data/shared/ucsc/chrom/?.len\\\"\"}", 
+            "tool_version": null, 
+            "type": "tool", 
+            "user_outputs": []
+        }
+    }
+}
